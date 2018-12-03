@@ -7,6 +7,7 @@ class Pages extends Controller {
     public function index() {
         $data = [
             'title' => 'Share Posts',
+            'description' => 'Sit tempor et magna ipsum diam vero ea duo, ut.',
         ];
 
         $this->view('pages/index', $data);
@@ -15,6 +16,7 @@ class Pages extends Controller {
     public function about() {
         $data = [
             'title' => 'about',
+            'description' => 'Sit tempor et magna ipsum diam vero ea duo, ut.Cheer neer the none ever his, deemed earth for and.',
         ];
         $this->view('pages/about', $data);
     }
