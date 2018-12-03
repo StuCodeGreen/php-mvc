@@ -1,0 +1,4 @@
+Core mini MVC framework
+
+- Update your path in public/.htaccess (RewriteBase)
+- Update your db params and url root in app/config/config.php
