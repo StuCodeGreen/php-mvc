@@ -66,7 +66,7 @@ class Users extends Controller {
               'password_err' => '',
               'confirm_password_err' => '',
           ];
-          
+
          //load view
          $this->view('users/register',$data);
         }
@@ -76,7 +76,39 @@ class Users extends Controller {
     public function login(){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //process form
-      } else {
+        //sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        // init data
+        $data = [
+         
+          'email' => trim($_POST['email']),
+          'password' => trim($_POST['password']),
+          'email_err' => '',
+          'password_err' => '',      
+      ];
+
+      //validate email
+      if (empty($data['email'])) {
+        $data['email_err'] = 'Please enter email';
+    }
+
+    //validate password
+    if (empty($data['password'])) {
+      $data['password_err'] = 'Please enter password';
+  }   
+    // Make sure errors are empty
+       if (empty($data['email_err']) && empty($data['password_err'])) {
+        // Validated
+        die('SUCCESS');
+    } else {
+        // Load view with errors
+        $this->view('users/login', $data);
+    }
+        
+  
+  
+  } else {
         $data = [
           'email' => '',
           'password' => '',   
