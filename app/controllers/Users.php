@@ -154,7 +154,7 @@ class Users extends Controller {
 			$_SESSION['user_id'] = $user->id;
 			$_SESSION['user_id'] = $user->email;
 			$_SESSION['user_id'] = $user->name;
-			redirect('pages/index');
+			redirect('posts');
 		}
 
 		public function logout(){
@@ -165,11 +165,5 @@ class Users extends Controller {
 			redirect('user/login');
 		}
 
-		public function isLoggedIn(){
-			if(isset($_SESSION['user_id'])){
-				return true;
-			} else {
-				return false;
-			}
-		}
+	
 }
