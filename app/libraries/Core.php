@@ -14,7 +14,7 @@ class Core {
         // print_r($this->getUrl());
         $url = $this->getUrl();
 
-        //look in controiller for firs value
+        //look in controller for firs value
         if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
             //if exists, set as controller
             $this->currentController = ucwords($url[0]);
