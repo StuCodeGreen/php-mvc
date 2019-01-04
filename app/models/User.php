@@ -34,7 +34,7 @@ class User {
 					return $row;
 				} else {
 					false;
-				}
+				}		
 		}
 
 		
