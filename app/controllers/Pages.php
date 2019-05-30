@@ -5,9 +5,9 @@ class Pages extends Controller {
     }
 
     public function index() {
-				if(isLoggedIn()){
-					redirect('posts');
-				}
+        if (isLoggedIn()) {
+            redirect('posts');
+        }
         $data = [
             'title' => 'Share Posts',
             'description' => 'Sit tempor et magna ipsum diam vero ea duo, ut.',
